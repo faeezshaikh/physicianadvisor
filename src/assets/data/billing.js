@@ -1,6 +1,6 @@
 {
     "quiz": {
-        "name": "Costing",
+        "name": "Billing & Pricing",
         "logo" : "assets/img/S3.png",
         "time":"20 minutes"
     },

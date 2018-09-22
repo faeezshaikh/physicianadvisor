@@ -29,7 +29,7 @@
       <!--<ion-item-sliding *ngFor="let topic of topics">
         <ion-item (click)="itemTapped($event, topic)" detail-push>-->
 
-        <ion-item  *ngFor="let topic of topics | slice:0:8; let i = index;" (click)="itemTapped($event, topic)" detail-push>
+        <ion-item  *ngFor="let topic of topics | slice:0:4; let i = index;" (click)="itemTapped($event, topic)" detail-push>
           
           <ion-thumbnail item-left>
             <img src="{{topic.icon}}">
@@ -54,7 +54,7 @@
    
     <ion-item-divider color="light">Mock Exams</ion-item-divider>
     <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderExams($event)">
-      <ion-item *ngFor="let exam of topics | slice:8:10; let i = index;" (click)="itemTapped($event, exam)" detail-push>
+      <ion-item *ngFor="let exam of topics | slice:4:6; let i = index;" (click)="itemTapped($event, exam)" detail-push>
         <ion-thumbnail item-left>
           <img src="{{exam.icon}}">
         </ion-thumbnail>

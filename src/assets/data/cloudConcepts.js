@@ -1,6 +1,6 @@
 {
     "quiz": {
-        "name": "Cloud Migration",
+        "name": "Cloud Concepts",
         "logo" : "assets/img/CloudFormation.png",
         "time":"20 minutes"
     },

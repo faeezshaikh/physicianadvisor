@@ -1,6 +1,6 @@
 {
     "quiz": {
-        "name": "H.A & Business Cont.",
+        "name": "Technology",
         "logo" : "assets/img/VPC.png",
         "time":"20 minutes"
     },

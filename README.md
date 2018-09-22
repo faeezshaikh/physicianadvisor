@@ -64,3 +64,17 @@ Till ! # 80 (Q #70 in Exam1) from pdf / april 4
 
 FB Mobile App Ads:
 https://developers.facebook.com/videos/f8-2016/driving-growth-with-mobile-app-ads/
+
+
+## Error:
+
+[app-scripts] /Users/faeezshaikh/git/awsCloudPract/node_modules/source-map/lib/source-node.js:115
+[app-scripts]         node.add(nextLine.substr(0, mapping.generatedColumn));
+[app-scripts]                           ^
+[app-scripts]
+[app-scripts] TypeError: Cannot read property 'substr' of undefined
+
+
+## Resolution:
+https://stackoverflow.com/questions/41907409/typeerror-cannot-read-property-substr-of-undefined-source-node-js/41923610
+
