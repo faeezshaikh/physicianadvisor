@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {MyLocalStorage} from './my-local-storage';
+import _ from "lodash";
 
 
 @Injectable()
@@ -22,9 +23,8 @@ export class MyDataService {
     this.topicMap.set(3, 'assets/data/technology.js');
     this.topicMap.set(4, 'assets/data/billing.js');
 
-    this.topicMap.set(9, 'assets/data/exam1.js');
-    this.topicMap.set(10, 'assets/data/exam2.js');
-    // this.topicMap.set(11, 'assets/data/exam3.js');
+    this.topicMap.set(5, 'assets/data/exam1.js');
+    this.topicMap.set(6, 'assets/data/exam2.js');
 
     
   }
@@ -89,7 +89,10 @@ export class MyDataService {
         });
     });
   console.log('Formed Topics Array:', this.topics);
-  return this.topics;
+  let sortedObjects = _.sortBy(this.topics, 'no');
+  console.log('sorted array:',sortedObjects);
+  
+  return sortedObjects;
     
 
 }
