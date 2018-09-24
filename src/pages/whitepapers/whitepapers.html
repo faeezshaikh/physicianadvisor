@@ -19,10 +19,10 @@
  <ion-list>
         <ion-item text-wrap *ngFor="let paper of whitepapers" (click)="openLink($event, paper.link)">
           <ion-avatar item-left>
-                  <img src="assets/img/pdf-icon.ico">
+                  <img src="{{paper.logo}}">
           </ion-avatar>
           <h2>{{paper.title}}</h2>
-          <ion-icon item-right name="md-download"></ion-icon>
+          <ion-icon item-right name="{{paper.icon}}"></ion-icon>
         </ion-item>
   </ion-list>
 </ion-content>
