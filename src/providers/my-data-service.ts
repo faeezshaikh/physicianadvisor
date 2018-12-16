@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/map'; 
+
+
+// import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import {MyLocalStorage} from './my-local-storage';
 import _ from "lodash";
 
@@ -15,7 +18,7 @@ export class MyDataService {
   topics = [];
   loggedInUserEmail: string;
 
-  constructor(public http: Http,public storage: MyLocalStorage) {
+  constructor(public http: HttpClient,public storage: MyLocalStorage) {
     // console.log('Hello DataService Provider');
     this.topicMap = new Map<number, string>();
     this.topicMap.set(1, 'assets/data/cloudConcepts.js');
@@ -41,7 +44,7 @@ export class MyDataService {
     // if (!this.data) {
       return new Promise(resolve => {
         this.http.get(this.fileName)
-          .map(res => res.json())
+          // .map(res => res.)
           .subscribe(data => {
             this.data = data;
             resolve(this.data);

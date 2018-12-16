@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
 export class MyLocalStorage {
 
-  constructor(public http: Http,public storage: Storage) {
+  constructor(public http: HttpClient,public storage: Storage) {
     console.log('Hello MyLocalStorage Provider');
   }
 

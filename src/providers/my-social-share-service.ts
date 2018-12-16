@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Platform,ToastController} from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -7,7 +7,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 @Injectable()
 export class MySocialShareService {
 
-  constructor(public http: Http,private socialSharing: SocialSharing,public platform   : Platform,public toastCtrl: ToastController) {
+  constructor(public http: HttpClient,private socialSharing: SocialSharing,public platform   : Platform,public toastCtrl: ToastController) {
     console.log('Hello MyLocalStorage Provider');
   }
 

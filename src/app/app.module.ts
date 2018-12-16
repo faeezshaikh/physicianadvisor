@@ -19,6 +19,25 @@ import { MySocialShareService } from '../providers/my-social-share-service';
 import { VideosPage } from '../pages/videos/videos';
 import { WhitepapersPage } from '../pages/whitepapers/whitepapers';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { BrowserModule } from '@angular/platform-browser';
+// import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+
+import { AngularFireModule } from 'angularfire2';
+
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const environment = {
+  firebase: {
+    apiKey: "AIzaSyCfpQi6UU3_mRSc8D45Hs5NhRKqxwXE4dI",
+    authDomain: "awscloudpractitioner-95ff7.firebaseapp.com",
+    databaseURL: "https://awscloudpractitioner-95ff7.firebaseio.com",
+    projectId: "awscloudpractitioner-95ff7",
+    storageBucket: "awscloudpractitioner-95ff7.appspot.com",
+    messagingSenderId: "56759945711"
+  }
+};
 
 import {
   CognitoUtil,
@@ -58,8 +77,13 @@ import {EventsService} from "../providers/events.service";
     WhitepapersPage
   ],
   imports: [
+    
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule, 
+    HttpClientModule,
+    BrowserModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
