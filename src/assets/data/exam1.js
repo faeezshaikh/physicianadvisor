@@ -7,153 +7,177 @@
     "questions": [
     {
         "Id": 1,
-        "Name": "Simple AD does NOT support MFA, adding additional AD servers, trust relationships and transferring FSMO roles.", 
+        "Name": "Why is AWS more economical than traditional data centers for applications with varying compute workloads?", 
         
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "True", "IsAnswer": true },
-            { "Id": 1057, "QuestionId": 1010, "Name": "False", "IsAnswer": false }]
+            { "Id": 1, "QuestionId": 1010, "Name": "Amazon Elastic Compute Cloud (Amazon EC2) costs are billed on a monthly basis.", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "Customers retain full administrative access to their Amazon EC2 instances.", "IsAnswer": false },
+            { "Id": 3, "QuestionId": 1010, "Name": "Amazon EC2 instances can be launched on-demand when needed.", "IsAnswer": true },
+            { "Id": 4, "QuestionId": 1010, "Name": "Customers can permanently run enough instances to handle peak workloads", "IsAnswer": false }],
+            "Explanation":"The ability to launch instances on-demand when needed allows customers launch and terminate instances in response to a varying workload. This is a more economical practice than purchasing enough on-premises servers to handle the peak load."
         
     },
     {
         "Id": 2,
-        "Name": "When federating with Active Directory for single-sign on, which of the following is the correct sequence of steps?", 
+        "Name": "Which AWS service would simplify migration of a database to AWS?", 
         
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "1) The user navigates to ADFS webserver, 2) The user enter in their single sign on credentials, 3) The user's web browser receives a SAML assertion from the AD server, 4) The user's browser then posts the SAML assertion to the AWS SAML end point for SAML and the GiveUserSAMLAccess API request is used to request temporary security credentials. 5) The user is then able to access the AWS Console.", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "1) The user navigates to the AWS console, 2) The user enter in their active directory single sign on credentials in to AWS, 3) The user's web browser receives a SAML assertion from AWS, 4) The user is then able to access the AWS Console.", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "1) The user navigates to ADFS webserver, 2) The user enter in their single sign on credentials, 3) The user's web browser receives a SAML assertion from the AD server, 4) The user's browser then posts the SAML assertion to the AWS SAML end point for SAML and the AssumeRoleWithSAML API request is used to request temporary security credentials. 5) The user is then able to access the AWS Console.", "IsAnswer": true },
-            { "Id": 1058, "QuestionId": 1010, "Name": "1) The user navigates to ADFS webserver, 2) The user enter in their single sign on credentials, 3) The user's browser then posts the SAML assertion to the AWS SAML end point for SAML and the AssumeRoleWithSAML API request is used to request temporary security credentials. 4) The user's web browser receives a SAML assertion from the AD server. 5) The user is then able to access the AWS Console.", "IsAnswer": false }]
+            { "Id": 1, "QuestionId": 1010, "Name": "AWS Storage Gateway", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "AWS Database Migration Service (AWS DMS)", "IsAnswer": true },
+            { "Id": 3, "QuestionId": 1010, "Name": "Amazon Elastic Compute Cloud (Amazon EC2)", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "Amazon AppStream 2.0", "IsAnswer": false }],
+            "Explanation":"AWS Database Migration Service helps you migrate databases to AWS quickly and securely. See link for more details.",
+            "Ref":"https://aws.amazon.com/dms/"
         
     },
     
     {
         "Id": 3,
-        "Name": "To avoid DDoS you should design your infrastructure to scale.", 
+        "Name": "Which AWS offering enables customers to find, buy, and immediately start using software solutions in their AWS environment?", 
         
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "True", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "False", "IsAnswer": false }],
-        "Explanation": "Horizontal scaling is preferred as it will give you time to investigate."
+            { "Id": 1, "QuestionId": 1010, "Name": "AWS Config", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "AWS OpsWorks", "IsAnswer": false },
+            { "Id": 3, "QuestionId": 1010, "Name": "AWS SDK", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "AWS Marketplace", "IsAnswer": true }],
+            "Explanation":"AWS Marketplace is an online store that helps customers discover, purchase, migrate and immediately start using the software and services they need to build products and run their businesses.",
+            "Ref":"https://aws.amazon.com/mp/"
     },
     {
         "Id": 4,
-        "Name": "You have to call this API to obtain temporary security credentials when authenticating with external Identity Providers", 
+        "Name": "Which AWS networking service enables a company to create a virtual network within AWS?", 
         
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "GetRoleWithWebIdentity", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "GetRole", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "AssumeRoleWithWebIdentityProvider", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "AssumeRoleWithWebIdentity", "IsAnswer": true }]
+            { "Id": 1, "QuestionId": 1010, "Name": "AWS Config", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "Amazon Route 53", "IsAnswer": false },
+            { "Id": 3, "QuestionId": 1010, "Name": "AWS Direct Connect", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "Amazon Virtual Private Cloud (Amazon VPC)", "IsAnswer": true }],
+            "Explanation":"Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.",
+            "Ref":"https://aws.amazon.com/vpc/"
         
     },
     {
         "Id": 5,
-        "Name": "CloudTrail allows you to monitor logs on your AWS EC2 instances and set alarms in response to log monitoring.", 
+        "Name": "Which of the following is AWS's responsibility under the AWS shared responsibility model?", 
         
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "False", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "True", "IsAnswer": false }],
-        "Explanation": "CloudTrail is monitoring for AWS API calls only. You should use CloudWatch if you want to monitor instance logs."
+            { "Id": 1, "QuestionId": 1010, "Name": "Configuring third-party applications", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "Maintaining physical hardware ", "IsAnswer": true },
+            { "Id": 3, "QuestionId": 1010, "Name": "Securing application access and data", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "Managing custom Amazon Machine Images (AMIs)", "IsAnswer": false }],
+            "Explanation":"Security and Compliance is a shared responsibility between AWS and the customer. See link for more details.",
+            "Ref":"https://aws.amazon.com/compliance/shared-responsibility-model/"
         
     },
    
      {
         "Id": 6,
-        "Name": "Your company has recently extended its datacenter into a VPC on AWS to add burst computing capacity as needed. Members of your Network Operations Center need to be able to go to the AWS Management Console and administer Amazon EC2 instances as necessary. You don't want to create new IAM users for each NOC member and make those users sign in again to the AWS Management Console. Which option below will meet the needs for your NOC members?", 
+        "Name": "Which component of AWS global infrastructure does Amazon CloudFront use to ensure low-latency delivery?", 
         "Tag":"Security",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Use your on-premises SAML 2.0-compliant identity provider (IdP) to grant the NOC members federated access to the AWS Management Console via the AWS single sign-on (SSO) endpoint.", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Use Web Identity Federation to retrieve AWS temporary security credentials to enable your NOC members to sign in to the AWS Management Console.", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Use your on-premises SAML 2.0-compllant identity provider (IdP) to retrieve temporary security credentials to enable NOC members to sign in to the AWS Management Console.", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Use OAuth 2.0 to retrieve temporary AWS security credentials to enable your NOC members to sign in to the AWS Management Console.", "IsAnswer": false }],
-            "Explanation":"Use SAML 2.0 for Single Sign-on. See link for more information",
-            "Ref":"http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-saml.html"
+            { "Id": 1, "QuestionId": 1010, "Name": "AWS Regions", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "AWS edge locations", "IsAnswer": true },
+            { "Id": 3, "QuestionId": 1010, "Name": "AWS Availability Zones", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "Amazon Virtual Private Cloud (Amazon VPC)", "IsAnswer": false }],
+            "Explanation":"Amazon CloudFront is a global content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to your viewers with low latency and high transfer speeds. See link for more details.",
+            "Ref":"https://aws.amazon.com/cloudfront/"
     } 
     ,
      {
         "Id": 7,
-        "Name": "Your fortune 500 company has under taken a TCO analysis evaluating the use of Amazon S3 versus acquiring more hardware. The outcome was that all employees would be granted access to use Amazon S3 for storage of their personal documents. Which of the following will you need to consider so you can set up a solution that incorporates single sign-on from your corporate AD or LDAP directory and restricts access for each user to a designated user folder in a bucket? Choose 3 answers", 
+        "Name": "How would a system administrator add an additional layer of login security to a user's AWS Management Console?", 
         "Tag":"Security",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Using AWS Security Token Service to generate temporary tokens.", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Setting up a matching IAM user for every user in your corporate directory that needs access to a folder in the bucket.", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Tagging each folder in the bucket.", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Configuring an IAM role.", "IsAnswer": true },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Setting up a federation proxy or identity provider.", "IsAnswer": true }]
+            { "Id": 1, "QuestionId": 1010, "Name": "Use AWS Cloud Directory", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "Audit AWS Identity and Access Management (IAM) roles", "IsAnswer": false },
+            { "Id": 3, "QuestionId": 1010, "Name": "Enable Multi-Factor Authentication", "IsAnswer": true },
+            { "Id": 4, "QuestionId": 1010, "Name": "Enable AWS CloudTrail", "IsAnswer": false }],
+            "Explanation":"AWS Multi-Factor Authentication (MFA) is a simple best practice that adds an extra layer of protection on top of your user name and password. See link for more details.",
+            "Ref":"https://aws.amazon.com/iam/details/mfa/"
     } 
     ,
      {
         "Id": 8,
-        "Name": "An AWS customer is deploying an application that is composed of an AutoScaling group of EC2 instances. The customers security policy requires that every outbound connection from these instances to any other service within the customers Virtual Private Cloud must be authenticated using a unique X.509 certificate that contains the specific Instance-id. In addition, all X.509 certificates must be signed by the customer's key management service in order to be trusted for authentication. Which of the following configurations will support these requirements:", 
+        "Name": "Which service can identify the user that made the API call when an Amazon Elastic Compute Cloud (Amazon EC2) instance is terminated?", 
         "Tag":"Security",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Configure an IAM Role that grants access to an Amazon S3 object containing a signed certificate and configure the Auto Scaling group to launch instances with this role. Have the instances bootstrap get the certificate from Amazon S3 upon first boot.", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Configure the Auto Scaling group to send an SNS notification of the launch of a new instance to the trusted key management service. Have the key management service generate a signed certificate and send it directly to the newly launched instance.", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Embed a certificate into the Amazon Machine Image that is used by the Auto Scaling group. Have the launched instances generate a certificate signature request with the Instance's assigned instance-id to the key management service for signature.", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Configure the launched instances to generate a new certificate upon first boot. Have the key management service poll the AutoScaling group for associated instances and send new instances a certificate signature that contains the specific Instance-id.", "IsAnswer": false }]
+            { "Id": 1, "QuestionId": 1010, "Name": "Amazon CloudWatch", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "AWS CloudTrail", "IsAnswer": true },
+            { "Id": 3, "QuestionId": 1010, "Name": "AWS X-Ray", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "AWS Identity and Access Management (AWS IAM)", "IsAnswer": false }],
+            "Explanation":"AWS CloudTrail is an AWS service that helps you enable governance, compliance, and operational and risk auditing of your AWS account. See link for more details.",
+            "Ref":"https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
     } ,
      {
         "Id": 9,
-        "Name": "You are looking to migrate your Development (Dev) and Test environments to AWS. You have decided to use separate AWS accounts to host each environment. You plan to link each account's bill to a Master AWS account using Consolidated Billing. To make sure you keep within budget you would like to implement a way for administrators in the Master account to have access to stop, delete and/or terminate resources in both the Dev and Test accounts. Identify which option will allow you to achieve this goal.", 
+        "Name": "Which service would you use to send alerts based on Amazon CloudWatch alarms?", 
         "Tag":"Costing",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Create IAM users in the Master account with full Admin permissions. Create cross-account roles in the Dev and Test accounts that grant the Master account access to the resources in the account by inheriting permissions from the Master account.", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Create IAM users and a cross-account role in the Master account that grants full Admin permissions to the Dev and Test accounts.", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Link the accounts using Consolidated Billing. This will give IAM Users in the Master account access to resources in the Dev and Test accounts.", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Create IAM users in the Master account. Create cross-account roles in the Dev and Test accounts that have full Admin permissions and grant the Master account access.", "IsAnswer": true }],
-            "Explanation":"See link for more info",
-            "Ref":"http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html"
+            { "Id": 1, "QuestionId": 1010, "Name": "Amazon Simple Notification Service (Amazon SNS)", "IsAnswer": true },
+            { "Id": 2, "QuestionId": 1010, "Name": "AWS CloudTrail", "IsAnswer": false },
+            { "Id": 3, "QuestionId": 1010, "Name": "AWS Trusted Advisor", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "Amazon Route 53", "IsAnswer": false }],
+            "Explanation":"You can create a CloudWatch alarm that watches a single metric. The alarm performs one or more actions based on the value of the metric relative to a threshold over a number of time periods. The action can be an Amazon EC2 action, an Amazon EC2 Auto Scaling action, or a notification sent to an Amazon SNS topic.",
+            "Ref":"https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
     } 
    
    
     ,
      {
         "Id": 10,
-        "Name": "You are implementing AWS Direct Connect. You intend to use AWS public service endpoints, such as Amazon S3, across the AWS Direct Connect link. You want other Internet traffic to use your existing link to an Internet Service Provider. What is the correct way to configure AWS Direct Connect for access to services such as Amazon S3?", 
+        "Name": "Where can a customer find information about prohibited actions on AWS infrastructure?", 
         "Tag":"Network",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Create a public interface on your AWS Direct Connect link. Redistribute BGP routes into your existing routing infrastructure; advertise specific routes for your network to AWS.", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Create a private interface on your AWS Direct Connect link. Redistribute BGP routes into your existing routing infrastructure and advertise a default route to AWS.", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Create a private interface on your AWS Direct Connect link. Configure a static route via your AWS Direct Connect link that points to Amazon S3. Configure specific routes to your network in your VPC.", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Configure a public interface on your AWS Direct Connect link. Configure a static route via your AWS Direct Connect link that points to Amazon S3. Advertise a default route to AWS using BGP.", "IsAnswer": false }],
-            "Explanation":"See link for more info.",
-            "Ref":"https://aws.amazon.com/directconnect/faqs/"
+            { "Id": 1, "QuestionId": 1010, "Name": "AWS Trusted Advisor", "IsAnswer": false },
+            { "Id": 2, "QuestionId": 1010, "Name": "AWS Identity and Access Management (IAM)", "IsAnswer": false },
+            { "Id": 3, "QuestionId": 1010, "Name": "AWS Billing Console", "IsAnswer": false },
+            { "Id": 4, "QuestionId": 1010, "Name": "AWS Acceptable Use Policy", "IsAnswer": true }],
+            "Explanation":"See AWS Acceptable Use Policy at the link below:",
+            "Ref":"https://aws.amazon.com/aup/"
     } ,
      {
         "Id": 11,
-        "Name": "What is the name of licensing model in which a user can use his/her existing Oracle Database licenses to run Oracle deployments on Amazon RDS?", 
+        "Name": "Which of the following is a factor when considering Total Cost of Ownership (TCO) for the AWS Cloud?", 
         "Tag":"Data",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Bring Your Own License", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Role Bases License", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Enterprise License", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "License Included", "IsAnswer": false }],
-                     "Explanation":"See link for more info.",
-            "Ref":"https://aws.amazon.com/oracle/"
+            { "Id": 1055, "QuestionId": 1010, "Name": "The number of servers migrated to AWS.", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "The number of users migrated to AWS.", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "The number of passwords migrated to AWS.", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "The number of keys migrated to AWS.", "IsAnswer": false }],
+            "Explanation":"See link for details on TCO for AWS.",
+            "Ref":"https://aws.amazon.com/blogs/aws/the-new-aws-tco-calculator/"
     } 
     ,
      {
         "Id": 12,
-        "Name": " If I write the below command, what does it do?  'ec2-run ami-e3a5408a -n 20 -g appserver' ", 
+        "Name": "Which AWS service can be used as a Global content delivery network (CDN) service?", 
         "Tag":"",
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "Start twenty instances as members of appserver group.", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "Creates 20 rules in the security group named appserver", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "Terminate twenty instances as members of appserver group.", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "Start 20 security groups", "IsAnswer": false }]
+            { "Id": 1055, "QuestionId": 1010, "Name": "Amazon SES", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Cloudtrail", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Cloudfront", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "S3", "IsAnswer": false }],
+            "Explanation":"Amazon CloudFront is a global content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to your viewers with low latency and high transfer speeds.",
+            "Ref":"https://aws.amazon.com/cloudfront/"
     }
     ,
     {
         "Id": 13,
-        "Name": "To ensure that your Amazon CloudHSM encryption keys are not lost you must run a cluster (more than one instance).", 
+        "Name": "The firm you work for is considering migrating to AWS. They are concerned about cost and the initial investment needed. Which of the following features of AWS pricing helps lower the initial investment amount needed? Choose 2 answers from the options given below:", 
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "True", "IsAnswer": true },
-            { "Id": 1056, "QuestionId": 1010, "Name": "False", "IsAnswer": false }]
+            { "Id": 1055, "QuestionId": 1010, "Name": "The ability to choose the lowest cost vendor", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "The ability to pay as you go ", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "No upfront costs", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Discounts for upfront payments", "IsAnswer": false }],
+            "Explanation":"The ability to choose the lowest cost vendor is not exclusive to AWS over on-premise solutions. While AWS does have services that provide discounts for upfront payment, this is not exclusive to AWS over on premise solutions. The correct answers are: The ability to pay as you go & No upfront costs.",
+            "Ref":"https://aws.amazon.com/pricing/"
+            
+
         
     },
     {
         "Id": 14,
-        "Name": "To minimize the attack surface area, servers can be placed behind a bastion server through which all traffic has to pass.",
+        "Name": "",
         "Explanation": "There are two issues with this question. One, traffic never flows through a Bastion host. A Bastion host is like a secure control room from which you monitor and command the factory floor. Two, the word ALL should have been a good hint that this is false.",
         "Ref": "https://aws.amazon.com/blogs/security/controlling-network-access-to-ec2-instances-using-a-bastion-server/",
         "Options": [

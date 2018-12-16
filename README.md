@@ -59,7 +59,6 @@ Chat with other users
 Comment on a question
 
 
-Till ! # 80 (Q #70 in Exam1) from pdf / april 4
 
 
 FB Mobile App Ads:
@@ -78,3 +77,13 @@ https://developers.facebook.com/videos/f8-2016/driving-growth-with-mobile-app-ad
 ## Resolution:
 https://stackoverflow.com/questions/41907409/typeerror-cannot-read-property-substr-of-undefined-source-node-js/41923610
 
+=======
+
+1. Social login
+2. Multiple-choice: Has one correct response and three incorrect responses (distractors).
+   Multiple-response: Has two correct responses out of five options. 
+
+3. Your results for the examination are reported as a scaled score from 100 through 1000, with a minimum passing score of 700.
+4. Videos
+5. Content
+    Exam1.js has first 10 questions from Exam sample.
