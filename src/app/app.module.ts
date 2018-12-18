@@ -28,6 +28,9 @@ import { AngularFireModule } from 'angularfire2';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+
+import { AuthService } from '../providers/auth.service';
+
 export const environment = {
   firebase: {
     apiKey: "AIzaSyCfpQi6UU3_mRSc8D45Hs5NhRKqxwXE4dI",
@@ -39,23 +42,13 @@ export const environment = {
   }
 };
 
-import {
-  CognitoUtil,
-  UserLoginService,
-  UserParametersService,
-  UserRegistrationService
-} from "../providers/cognito.service";
-import {AwsUtil} from "../providers/aws.service";
+
 import {
   LoginPage,
-  LogoutPage,
-  RegisterPage,
-  ConfirmRegistrationPage,
-  ResendCodePage,
-  ForgotPasswordStep1Page,
-  ForgotPasswordStep2Page
+  LogoutPage
 } from "../pages/auth/auth";
 import {EventsService} from "../providers/events.service";
+
 
 
 @NgModule({
@@ -68,11 +61,6 @@ import {EventsService} from "../providers/events.service";
     ExamStartingModal,
     LoginPage,
     LogoutPage,
-    RegisterPage,
-    ConfirmRegistrationPage,
-    ResendCodePage,
-    ForgotPasswordStep1Page,
-    ForgotPasswordStep2Page,
     VideosPage,
     WhitepapersPage
   ],
@@ -95,11 +83,6 @@ import {EventsService} from "../providers/events.service";
     ExamStartingModal,
     LoginPage,
     LogoutPage,
-    RegisterPage,
-    ConfirmRegistrationPage,
-    ResendCodePage,
-    ForgotPasswordStep1Page,
-    ForgotPasswordStep2Page,
     VideosPage,
     WhitepapersPage
 
@@ -109,17 +92,13 @@ import {EventsService} from "../providers/events.service";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MyDataService,
-    CognitoUtil,
-    AwsUtil,
-    UserLoginService,
-    UserParametersService,
-    UserRegistrationService,
     MyLocalStorage,
     EventsService,
     SimpleTimer,
     SocialSharing,
     MySocialShareService,
-    InAppBrowser
+    InAppBrowser,
+    AuthService
     // NativeStorage
   ]
 })

@@ -54,23 +54,23 @@ export class AuthService {
     })
   }
 
-  doRegister(value){
+  doGithubLogin(){
     return new Promise<any>((resolve, reject) => {
-      firebase.auth().createUserWithEmailAndPassword(value.email, value.password)
+      let provider = new firebase.auth.GithubAuthProvider()
+      this.afAuth.auth
+      .signInWithPopup(provider)
       .then(res => {
         resolve(res);
-      }, err => reject(err))
+      }, err => {
+        console.log(err);
+        reject(err);
+      })
     })
   }
 
-  doLogin(value){
-    return new Promise<any>((resolve, reject) => {
-      firebase.auth().signInWithEmailAndPassword(value.email, value.password)
-      .then(res => {
-        resolve(res);
-      }, err => reject(err))
-    })
-  }
+
+
+  
 
   doLogout(){
     return new Promise((resolve, reject) => {

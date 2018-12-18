@@ -9,7 +9,7 @@ import { VideosPage } from '../pages/videos/videos';
 import {WhitepapersPage } from '../pages/whitepapers/whitepapers';
 
 import {LoginPage, LogoutPage} from "../pages/auth/auth";
-import {AwsUtil} from "../providers/aws.service";
+
 import {MyDataService} from '../providers/my-data-service';
 
 
@@ -30,7 +30,6 @@ export class MyApp {
               public statusBar: StatusBar,
               public splashScreen: SplashScreen,
               public events:Events,
-              public awsUtil:AwsUtil,
               public menu:MenuController,
               public dataService: MyDataService) {
     this.initializeApp();
@@ -52,7 +51,7 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
-       this.awsUtil.initAwsService();
+
        this.rootPage = this.loginPage;
        this.listenToLoginEvents();
 
