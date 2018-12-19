@@ -39,7 +39,7 @@ export class MyApp {
       { title: 'Video Resources', component: VideosPage, icon: 'logo-youtube' },
       { title: 'Other Resources', component: WhitepapersPage, icon: 'folder' },
       { title: 'Contact Us', component: ContactUsPage, icon: 'people' },
-      { title: 'Logout', component: '', icon: 'people' }
+      { title: 'Logout', component: '', icon: 'log-out' }
     ];
 
 

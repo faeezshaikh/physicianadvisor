@@ -94,6 +94,34 @@ export class LoginPage  {
     })
   }
 
+  signMeInWithGithub(){
+    this.authService.doGithubLogin()
+    .then(res => {
+      console.log('Success with Github',res);
+      if(res.user.email != null )
+      this.dataService.setLoggedInUserEmail(res.user.email);
+      else 
+      this.dataService.setLoggedInUserEmail(res.user.displayName);
+      this.eventService.sendLoggedInEvent();
+      this.nav.setRoot(TopicsListPage);
+      // this.router.navigate(['/user']);
+    })
+  }
+
+  signMeInWithFacebook(){
+    this.authService.doFacebookLogin()
+    .then(res => {
+      console.log('Success with Facebook',res);
+      if(res.user.email != null )
+      this.dataService.setLoggedInUserEmail(res.user.email);
+      else 
+      this.dataService.setLoggedInUserEmail(res.user.displayName);
+      this.eventService.sendLoggedInEvent();
+      this.nav.setRoot(TopicsListPage);
+      // this.router.navigate(['/user']);
+    })
+  }
+
 
 
   cognitoCallback(message:string, result:any) {
