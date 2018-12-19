@@ -44,8 +44,7 @@ export const environment = {
 
 
 import {
-  LoginPage,
-  LogoutPage
+  LoginPage
 } from "../pages/auth/auth";
 import {EventsService} from "../providers/events.service";
 
@@ -60,7 +59,6 @@ import {EventsService} from "../providers/events.service";
     ExplanationModal,
     ExamStartingModal,
     LoginPage,
-    LogoutPage,
     VideosPage,
     WhitepapersPage
   ],
@@ -82,7 +80,6 @@ import {EventsService} from "../providers/events.service";
     ExplanationModal,
     ExamStartingModal,
     LoginPage,
-    LogoutPage,
     VideosPage,
     WhitepapersPage
 

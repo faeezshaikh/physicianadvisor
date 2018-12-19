@@ -103,12 +103,18 @@ export class MyDataService {
 setLoggedInUserEmail(email) {
   console.log('Email set to :' , email);
   this.loggedInUserEmail = email;
-  this.storage.saveToStorage('email',email);
+  localStorage.setItem('email',email);
+  // this.storage.saveToStorage('email',email);
 }
 
+
+deleteFromStorage(email){
+  this.storage.deleteFromStorage(email);
+}
 getLoggedInUserEmail() {
-  console.log('Returning email:' , this.storage.getFromStorage('email'));
+  let email = localStorage.getItem('email');
+  console.log('Returning email:' , email);
   // return this.loggedInUserEmail;
-  return this.storage.getFromStorage('email');
+  return email;
 }
 }

@@ -38,13 +38,24 @@ export class MyApp {
       { title: 'Practice Exams', component: TopicsListPage, icon: 'list' },
       { title: 'Video Resources', component: VideosPage, icon: 'logo-youtube' },
       { title: 'Other Resources', component: WhitepapersPage, icon: 'folder' },
-      { title: 'Contact Us', component: ContactUsPage, icon: 'people' }
+      { title: 'Contact Us', component: ContactUsPage, icon: 'people' },
+      { title: 'Logout', component: '', icon: 'people' }
     ];
 
 
   }
 
+
+  logout() {
+    console.log("Publishing logout event");
+    // localStorage.removeItem('r'); 
+    this.dataService.deleteFromStorage("email");
+    this.events.publish('user:logout');
+  
+  }
   initializeApp() {
+    console.log('insside intiApp');
+    
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -61,6 +72,11 @@ export class MyApp {
   openPage(page) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
+
+    if(page.title == 'Logout') {
+      this.logout();
+      return;
+    }
     this.nav.setRoot(page.component);
     // this.nav.setRoot(page);
   }
@@ -72,15 +88,15 @@ export class MyApp {
 
   listenToLoginEvents() {
     this.events.subscribe('user:login', () => {
-      this.dataService.getLoggedInUserEmail().then((data) => {
-        this.loggedInUserEmail = data;
-      });
-      this.enableMenu(true);
+    this.loggedInUserEmail = this.dataService.getLoggedInUserEmail() ;
+    this.enableMenu(true);
     });
 
 
     this.events.subscribe('user:logout', () => {
       this.enableMenu(false);
+      // this.nav.pop();
+      this.nav.setRoot(LoginPage);
     });
   }
 

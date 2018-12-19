@@ -34,11 +34,19 @@ export class LoginPage  {
       this.email = navParam.get("email");
 
       // If the user is signed in, dont prompt for creds, send them to home page
-    // if (this.userService.isAuthenticated(this)) {
-      if (true) {
-      this.eventService.sendLoggedInEvent();
-      this.nav.setRoot(TopicsListPage);
-    }
+
+      // if (true) {
+        // this.dataService.getLoggedInUserEmail().then(data => {
+        //   if(data!=null) {
+        //   this.eventService.sendLoggedInEvent();
+        //   this.nav.setRoot(TopicsListPage);
+        //   }
+        //    else {
+        //     this.nav.setRoot(LoginPage);
+        //    }
+        // });
+ 
+    
 
   }
 
@@ -72,6 +80,21 @@ export class LoginPage  {
   }
 
 
+  signMeInWithTwitter(){
+    this.authService.doTwitterLogin()
+    .then(res => {
+      console.log('Success with Twitter',res);
+      if(res.user.email != null )
+      this.dataService.setLoggedInUserEmail(res.user.email);
+      else 
+      this.dataService.setLoggedInUserEmail(res.user.displayName);
+      this.eventService.sendLoggedInEvent();
+      this.nav.setRoot(TopicsListPage);
+      // this.router.navigate(['/user']);
+    })
+  }
+
+
 
   cognitoCallback(message:string, result:any) {
     if (message != null) { //error
@@ -88,8 +111,6 @@ export class LoginPage  {
   isLoggedInCallback(message:string, isLoggedIn:boolean) {
     console.log("The user is logged in: " + isLoggedIn);
     if (isLoggedIn) {
-       //  console.log('Already Authenticated..Setting email:',this.email);
-      //this.dataService.setLoggedInUserEmail(this.email);
       this.eventService.sendLoggedInEvent();
       this.nav.setRoot(TopicsListPage);
     }
@@ -109,25 +130,6 @@ export class LoginPage  {
 
 }
 
-
-////////////// [ Logout Page ] ////////////////
-
-@Component({
-  template: ''
-})
-export class LogoutPage implements LoggedInCallback {
-
-  constructor(public navCtrl:NavController) {
-    // this.userService.isAuthenticated(this)
-  }
-
-  isLoggedInCallback(message:string, isLoggedIn:boolean) {
-    if (isLoggedIn) {
-      // this.userService.logout();
-    }
-    this.navCtrl.setRoot(LoginPage)
-  }
-}
 
 
 

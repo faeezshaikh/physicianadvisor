@@ -43,9 +43,26 @@ export class MyLocalStorage {
     getFromStorage(key:string): any {
        return this.storage.ready().then(() => {
         return this.storage.get(key.toString()).then((val) => {
-         return JSON.parse(val);
+          console.log('Stroage val:' ,val);
+          if(val == null){
+            // console.log('Reutning null');
+            
+            return null;
+
+          }
+          else {
+            console.log('Reutning ',JSON.parse(val));
+            return JSON.parse(val);
+          }
        })
      });
+  }
+
+  deleteFromStorage(key) {
+    console.log('Removing from storage  :' , key);
+    // this.loggedInUserEmail = email;
+    if(key!=null)
+      this.storage.remove(key);
   }
 
 }
