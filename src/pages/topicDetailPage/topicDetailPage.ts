@@ -6,7 +6,7 @@ import { ModalController, Content } from 'ionic-angular';
 import { ExplanationModal } from '../../modals/explanationModal';
 // import { ExamStartingModal} from '../../modals/examStartingModal';
 import { SimpleTimer } from 'ng2-simple-timer';
-
+import * as _ from 'lodash';
 
 @Component({
   selector: 'page-page3',
@@ -279,18 +279,55 @@ export class TopicDetailPage {
       return true;
   }
   
+  updateAnswer(ques,option){
+    // console.log('question:',q);
+    // console.log('option:',option);
 
-  isCorrect(question) {
-    let result = 'Correct';
-    let self = this;
-    question.Options.forEach(function (option, index, array) {
+    // var quest = _.find(this.questions, (question) => question.Id == q.Id).;
 
-      if (self.toBoolVal(option.Selected) != option.IsAnswer) {
-        // if (option.Selected != option.IsAnswer) {
-        result = 'Wrong';
-        return false;
+    this.questions.forEach(function (q, index, array) {
+      if(q.Id == ques.Id) {
+        q.Options.forEach(function (o, index, array) {
+          if(o.Id == option.Id) {
+            o.Selected = true;
+            // console.log('Set to true:',o);
+          } else {
+            o.Selected = false;
+          }
+        });
       }
     });
+  console.log('question:',ques);
+
+  }
+
+
+
+
+  isCorrect(question) {
+
+    let result = 'Correct';
+    let self = this;
+    if (question.answer) {
+      question.Options.forEach(function (option, index, array) {
+        if (option.IsAnswer == true) {
+          if (option.Name != question.answer) {
+            result = 'Wrong';
+            
+            return result;
+          }
+        }
+      });
+    } else {
+      question.Options.forEach(function (option, index, array) {
+
+        if (self.toBoolVal(option.Selected) != option.IsAnswer) {
+          // if (option.Selected != option.IsAnswer) {
+          result = 'Wrong';
+          return result;
+        }
+      });
+    }
     return result;
   }
 

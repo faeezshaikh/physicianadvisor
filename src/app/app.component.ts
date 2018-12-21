@@ -8,9 +8,10 @@ import { TopicsListPage } from '../pages/topicsListPage/topicsListPage';
 import { VideosPage } from '../pages/videos/videos';
 import {WhitepapersPage } from '../pages/whitepapers/whitepapers';
 
-import {LoginPage, LogoutPage} from "../pages/auth/auth";
+import {LoginPage} from "../pages/auth/auth";
 
 import {MyDataService} from '../providers/my-data-service';
+
 
 
 @Component({
@@ -24,7 +25,7 @@ export class MyApp {
   loggedInUserEmail: string;
 
   public loginPage = LoginPage;
-  public logoutPage = LogoutPage;
+  // public logoutPage = LogoutPage;
   
   constructor(public platform: Platform, 
               public statusBar: StatusBar,
@@ -62,9 +63,16 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
+      this.loggedInUserEmail = this.dataService.getLoggedInUserEmail() ;
+      if(this.loggedInUserEmail) {
+        // this.rootPage = TopicsListPage;
+        this.nav.setRoot(TopicsListPage);
+        this.enableMenu(true);
+      } else {
+        this.rootPage = this.loginPage;
+      }
 
-       this.rootPage = this.loginPage;
-       this.listenToLoginEvents();
+      this.listenToLoginEvents();
 
     });
   }

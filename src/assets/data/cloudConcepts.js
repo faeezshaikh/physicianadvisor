@@ -7,7 +7,7 @@
     "questions": [{
         "Id": 1,
         "Name": "A user can use Storage gateway to migrate the virtual machine data to AWS.",
-        
+        "manyoptions":false,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "True", "IsAnswer": true },
             { "Id": 1056, "QuestionId": 1010, "Name": "False", "IsAnswer": false }]
@@ -15,7 +15,7 @@
     {
         "Id": 2,
         "Name": "The biggest range of IP address (CIDR block) that can be created in a AWS VPC is:", 
-        
+        "manyoptions":false,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "/14", "IsAnswer": false },
             { "Id": 1057, "QuestionId": 1010, "Name": "/16", "IsAnswer": true },
@@ -25,7 +25,7 @@
     {
         "Id": 3,
         "Name": "Amazon reserves these many IP Address in a subnet.", 
-        
+        "manyoptions":false,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "1", "IsAnswer": false },
             { "Id": 1057, "QuestionId": 1010, "Name": "3", "IsAnswer": false },
@@ -36,7 +36,7 @@
     {
         "Id": 4,
         "Name": "While using VMWare vCentre, what option is available to you to start migrating to AWS?", 
-        
+        "manyoptions":false,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "EC2", "IsAnswer": false },
             { "Id": 1056, "QuestionId": 1010, "Name": "HyperV", "IsAnswer": false },
@@ -48,7 +48,7 @@
     {
         "Id": 5,
         "Name": "AWS Data Pipeline can be used for: (Choose 3):", 
-        
+        "manyoptions":true,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "Promote code through the Codepipeline service.", "IsAnswer": false },
             { "Id": 1056, "QuestionId": 1010, "Name": "Create a CI/CD Pipeline.", "IsAnswer": false },
@@ -60,7 +60,7 @@
     {
         "Id": 6,
         "Name": "The smalled CIDR block you can have in AWS is:", 
-        
+        "manyoptions":false,
         "Options": [
               { "Id": 1055, "QuestionId": 1010, "Name": "/16", "IsAnswer": false },
             { "Id": 1056, "QuestionId": 1010, "Name": "/24", "IsAnswer": false },
@@ -73,7 +73,7 @@
     {
         "Id": 7,
         "Name": "Which of the following are standard preconditions in AWS Datapipeline? (Choose 3)", 
-        
+        "manyoptions":true,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "DynamoDBDataExists", "IsAnswer": true },
             { "Id": 1056, "QuestionId": 1010, "Name": "ShellCommandPrecondition", "IsAnswer": true },
@@ -86,7 +86,7 @@
     {
         "Id": 8,
         "Name": "A company is using Volume Gateway to migrate on-prem data to AWS. However when the admin checks the console, he cannot see the volume data in S3. What could be the right explanation for this?", 
-        
+        "manyoptions":false,
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "Volume Gateway requires AWS Direct Connect for backing up data to AWS. The company has to use AWS Direct Connect for this to work", "IsAnswer": false },
             { "Id": 1056, "QuestionId": 1010, "Name": "Volume Gateway needs to have a target bucket defined in S3. The admin should verify if the bucket was correctly configured. ", "IsAnswer": false},
@@ -98,6 +98,7 @@
     {
         "Id": 9,
         "Name": "You've been brought in as solutions architect to assist an enterprise customer with their migration of an e-commerce platform to Amazon Virtual Private Cloud (VPC). The previous architect has already deployed a 3-tier VPC. The configuration is as shown below at the end (See image below). You are now ready to begin deploying EC2 instances into the VPC. Web servers must have direct access to the Internet. Application and database servers cannot have direct access to the Internet. Which configuration below will allow you the ability to remotely administer your application and database servers, as well as allow these servers to retrieve updates from the Internet?",
+        "manyoptions":false,
         "Pic": "assets/img/ques1.png",
         "Tag":"Cloud Migration",
         "Options": [
@@ -112,6 +113,7 @@
      {
         "Id": 10,
         "Name": "You are tasked with moving a legacy application from a virtual machine running inside your datacenter to an Amazon VPC. Unfortunately, this app requires access to a number of on- premises services and no one who configured the app still works for your company. Even worse, there's no documentation for it. What will allow the application running inside the VPC to reach back and access its internal dependencies without being reconfigured? Choose 3 answers", 
+        "manyoptions":true,
         "Tag":"CloudMigration",
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "A VM Import of the current virtual machine.", "IsAnswer": true },

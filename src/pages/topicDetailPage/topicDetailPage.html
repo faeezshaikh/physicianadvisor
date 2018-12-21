@@ -55,19 +55,37 @@
                 <!--<div class="item item-text-wrap col-100">-->
                 <!--<ul class="list">-->
 
-                <div *ngFor="let option of question.Options">
+                    <div *ngIf="question.manyoptions">
+                <div  *ngFor="let option of question.Options">
                     <!--<li class="item item-checkbox"><label class="checkbox"> 
                                           <input type="checkbox" id="{{option.Id}}" ng-model="option.Selected" ng-change="onSelect(question, option);">
                                             </label> {{option.Name}}
                                 
                                           </li>-->
 
-                    <ion-item>
+                    <ion-item >
 
                         <ion-checkbox color="primary" checked="false" [(ngModel)]="option.Selected"></ion-checkbox>
                         <ion-label> {{option.Name}}</ion-label>
                     </ion-item>
+
+
+                 
+
+                    
                 </div>
+            </div>
+
+                <div *ngIf="!question.manyoptions">
+                <ion-list  radio-group [(ngModel)]="question.answer">
+                        <ion-item *ngFor="let option of question.Options" >
+                            <ion-label> {{option.Name}}</ion-label>
+                            <ion-radio   item-left  name="firstName" color="primary" (ionSelect)="updateAnswer(question,option)" 
+                            checked="false" value="{{option.Name}}" ></ion-radio>
+                        </ion-item>
+                    </ion-list>
+                </div>
+                    
 
                 <!--</ul>-->
 
@@ -188,7 +206,8 @@
                 <div class="result-options">
                     <div *ngFor="let Option of question.Options">
                         <label class="{{  Option.IsAnswer ? 'result-correct': 'result-incorrect' }}"> 
-                                            <input id="{{Option.Id}}" type="checkbox" disabled="disabled" readonly="readonly" [(ngModel)]="Option.Selected" /> {{Option.Name}}
+                                            <input id="{{Option.Id}}" type="checkbox" disabled="disabled" readonly="readonly" 
+                                            [(ngModel)]="Option.Selected "/> {{Option.Name}}
                                         </label>
                         <!--<label ng-click="onSelect(Option);" class="{{  Option.IsAnswer ? 'result-correct': 'result-incorrect' }}"> 
                                             <input id="{{Option.Id}}" type="checkbox" disabled="disabled" readonly="readonly" ng-model="Option.Selected" /> {{Option.Name}}

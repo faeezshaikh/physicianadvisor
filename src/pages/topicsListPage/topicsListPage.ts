@@ -15,7 +15,7 @@ import { MySocialShareService } from '../../providers/my-social-share-service';
   templateUrl: 'topicsListPage.html'
 })
 export class TopicsListPage {
-  selectedItem: any;
+
   icons: string[];
   topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
   reorder: boolean = false;
@@ -29,7 +29,7 @@ export class TopicsListPage {
 
 
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+
 
     this.topics = dataService.getTopicsArray();
 

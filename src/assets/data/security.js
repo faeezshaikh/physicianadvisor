@@ -7,6 +7,7 @@
     "questions": [ {
         "Id": 1,
         "Name": "With regard to IAM, which of the following best describes a Group?", 
+        "manyoptions":false,
         "Tag":"Security",
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "A collection of AWS accounts", "IsAnswer": false },
@@ -19,6 +20,7 @@
       {
         "Id": 2,
         "Name": "A web company is looking to implement an intrusion detection and prevention system into their deployed VPC. This platform should have the ability to scale to thousands of instances running inside of the VPC. How should they architect their solution to achieve these goals?", 
+        "manyoptions":false,
         "Tag":"Security",
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "Configure each host with an agent that collects all network traffic and sends that traffic to the IDS/IPS platform for inspection.", "IsAnswer": false },
@@ -30,6 +32,7 @@
     {
         "Id": 3,
         "Name": "Which of the following AWS technologies can be used to mitigate against DDoS (Choose 2)",
+        "manyoptions":true,
         
         
         "Options": [
@@ -41,6 +44,7 @@
     {
         "Id": 4,
         "Name": "What is NTP Amplification?", 
+        "manyoptions":false,
         
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "When the attacker sends a flood of requests to a target server from multiple machines.", "IsAnswer": false },
@@ -51,6 +55,7 @@
      {
         "Id": 5,
         "Name": "Which of the following is not true about CloudHSM (Choose 1):", 
+        "manyoptions":false,
         
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "It is Single-Tenanted", "IsAnswer": false },
@@ -61,6 +66,7 @@
       {
         "Id": 6,
         "Name": "Which of the following measure should you take to mitigate against web application DDoS attacks?",
+        "manyoptions":false,
         "Options": [
            { "Id": 1055, "QuestionId": 1010, "Name": "Switch to a backup web server when the attack occurs.", "IsAnswer": false},
             { "Id": 1056, "QuestionId": 1010, "Name": "Include a WAF as part of your network infrastructure.", "IsAnswer": true },
@@ -72,6 +78,7 @@
     {
         "Id": 7,
         "Name": "Which of the following describes a Layer 7 attack?",
+        "manyoptions":false,
         "Options": [
            { "Id": 1055, "QuestionId": 1010, "Name": "When the attacker sends a flood of requests to a target server from multiple machines.", "IsAnswer": true},
             { "Id": 1056, "QuestionId": 1010, "Name": "When the attacker sends a spoofed target return address to an NTP server which responds with large amounts of information.", "IsAnswer": false },
@@ -82,6 +89,7 @@
     {
         "Id": 8,
         "Name": "Which of the following are returned by the AWS Security Token Service upon request for a federated token? (Choose 4)",
+        "manyoptions":true,
         
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "Access Key ID.", "IsAnswer": true },
@@ -93,6 +101,7 @@
      {
         "Id": 9,
         "Name": "You are designing an intrusion detection/prevention (IDS/IPS) solution for a customer web application in a single VPC. You are considering the options for Implementing IDS/IPS protection for traffic coming from the Internet. Which of the following options would you consider? Choose 2 answers", 
+        "manyoptions":true,
         "Tag":"Security",
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "Implement IDS/IPS agents on each instance running in VPC.", "IsAnswer": true },
@@ -104,6 +113,7 @@
      {
         "Id": 10,
         "Name": "An enterprise wants to use a third-party SaaS application. The SaaS application needs to have access to issue several API commands to discover Amazon EC2 resources running within the enterprise's account. The enterprise has internal security policies that require any outside access to their environment must conform to the principles of least privilege, and there must be controls in place to ensure that the credentials used by the SaaS vendor cannot be used by any other third party. Which of the following would meet all of these conditions:", 
+        "manyoptions":false,
         "Tag":"Security",
         "Options": [
             { "Id": 1055, "QuestionId": 1010, "Name": "Create an IAM role for cross-account access, allow the SaaS provider's account to assume the role, and assign it a policy that allows only the actions required by the SaaS application.", "IsAnswer": true },
