@@ -41,7 +41,7 @@ export class MyDataService {
     this.examsMap = new Map<number, string>();
     // this.topicMap.set(5, 'assets/data/exam3.js');
     this.examsMap.set(5, 'assets/data/exam1.js');
-    this.examsMap.set(6, 'assets/data/exam2.js');
+    this.examsMap.set(6, 'assets/data/exam3.js');
 
     
   }
