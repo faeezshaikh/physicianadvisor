@@ -68,7 +68,7 @@ export class TopicDetailPage {
         // this.openModal('asas');
         this.minutes = 120;
       }
-      dataService.getData(this.selectedTopic.no).then(theResult => {
+      dataService.getData(this.selectedTopic.no,this.selectedTopic.no>4).then(theResult => {
         this.data = theResult;
         this.questions = theResult.questions;
         this.questions = this.shuffle(this.questions);   /// TODO: Make shuffling of question order user configurable

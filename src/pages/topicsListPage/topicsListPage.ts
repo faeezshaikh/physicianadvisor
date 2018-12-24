@@ -18,6 +18,7 @@ export class TopicsListPage {
 
   icons: string[];
   topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
+
   reorder: boolean = false;
   reorderIcon: string = "options";
   @ViewChild(Content) content: Content;
@@ -32,6 +33,10 @@ export class TopicsListPage {
 
 
     this.topics = dataService.getTopicsArray();
+    this.exams = dataService.getExamsArray();
+    console.log('Retriecing Exams...',this.exams);
+    
+
 
     this.getHiScores();
 
@@ -89,10 +94,10 @@ export class TopicsListPage {
     this.topics = reorderArray(this.topics, indexes);
   }
 
-  reorderExams(indexes) {
-    console.log('ReORDER:', indexes);
-    this.exams = reorderArray(this.exams, indexes);
-  }
+  // reorderExams(indexes) {
+  //   console.log('ReORDER:', indexes);
+  //   this.exams = reorderArray(this.exams, indexes);
+  // }
 
   getHiScores() {
     // console.log('Retrieving HiScore');
