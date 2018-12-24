@@ -46,6 +46,8 @@ npm run ionic:serve
 
 
 
+## Social Login buttons:
+https://codepen.io/matchboxhero/pen/VYNejG
 
 
 
@@ -79,11 +81,15 @@ https://stackoverflow.com/questions/41907409/typeerror-cannot-read-property-subs
 
 =======
 
-1. Social login
-2. Multiple-choice: Has one correct response and three incorrect responses (distractors).
-   Multiple-response: Has two correct responses out of five options. 
-
+1. bug : not all exams appearing sometimes.. splice not working
 3. Your results for the examination are reported as a scaled score from 100 through 1000, with a minimum passing score of 700.
-4. Videos
 5. Content
     Exam1.js has first 10 questions from Exam sample.
+
+
+ Done:
+ ----
+ 1. Social login - Css styling buttong
+ 2. Multiple-choice: Has one correct response and three incorrect responses (distractors).
+   Multiple-response: Has two correct responses out of five options.    
+4. Videos

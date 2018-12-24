@@ -15,6 +15,7 @@ import { AuthService } from '../../providers/auth.service';
 
 
 @Component({
+  selector: 'page-page5',
   templateUrl: 'login.html'
 })
 export class LoginPage  {
