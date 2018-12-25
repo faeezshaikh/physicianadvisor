@@ -297,132 +297,284 @@
     ,
     {
         "Id": 21,
-        "Name": "", 
+        "Name": "You have developed a web application that has “.Net layer” which connects to a MySQL database. Which of the following AWS databases would provide high availability and automated backups to your application?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "Aurora", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "DynamoDB", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "An EC2 instance with MySQL installed.", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "An EC2 instance with Aurora installed.", "IsAnswer": false }],
+            "Explanation": "Amazon Aurora (Aurora) is a fully managed, MySQL- and PostgreSQL-compatible, relational database engine. It combines the speed and reliability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. It delivers up to five times the throughput of MySQL and up to three times the throughput of PostgreSQL without requiring changes to most of your existing applications.",
+            "Ref":"https://aws.amazon.com/rds/aurora/"  
     } 
     ,
     {
         "Id": 22,
-        "Name": "", 
+        "Name": "AWS allows us to “Stop guessing about our capacity needs” and “Automate to make architectural experimentation easier.” Which of the following is related to the previous principles?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "AWS General Design Principles.", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "The Five Pillars of the Well-Architected Framework.", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "AWS General Architecting Principles.", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "AWS General Efficiency Principles.", "IsAnswer": false }],
+            "Explanation": "The Well-Architected Framework identifies a set of general design principles to facilitate good design in the cloud: • Stop guessing your capacity needs: Eliminate guessing about your infrastructure capacity needs. When you make a capacity decision before you deploy a system, you might end up sitting on expensive idle resources or dealing with the performance implications of limited capacity. With cloud computing, these problems can go away. You can use as much or as little capacity as you need, and scale up and down automatically. • Test systems at production scale: In the cloud, you can create a production-scale test environment on demand, complete your testing, and then decommission the resources. Because you only pay for the test environment when it's running, you can simulate your live environment for a fraction of the cost of testing on premises. • Automate to make architectural experimentation easier: Automation allows you to create and replicate your systems at low cost and avoid the expense of manual effort. You can track changes to your automation, audit the impact, and revert to previous parameters when necessary. • Allow for evolutionary architectures: Allow for evolutionary architectures. In a traditional environment, architectural decisions are often implemented as static, one-time events, with a few major versions of a system during its lifetime. As a business and its context continue to change, these initial decisions might hinder the system’s ability to deliver changing business requirements. In the cloud, the capability to automate and test on demand lowers the risk of impact from design changes. This allows systems to evolve over time so that businesses can take advantage of innovations as a standard practice. • Drive architectures using data: In the cloud you can collect data on how your architectural choices affect the behavior of your workload. This lets you make fact-based decisions on how to improve your workload. Your cloud infrastructure is code, so you can use that data to inform your architecture choices and improvements over time. • Improve through game days: Test how your architecture and processes perform by regularly scheduling game days to simulate events in production. This will help you understand where improvements can be made and can help develop organizational experience in dealing with events."
     } 
     ,
     {
         "Id": 23,
-        "Name": "", 
+        "Name": "In order to implement best practices when dealing with “Single Point of failure,” you should aim to build as much automation as possible in both detecting and reacting to failure. Which of the following AWS services would help you? (Select 4 that apply)", 
         "Tag":"",
-        "manyoptions":false,
+        "manyoptions":true,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "ELB", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Amazon Route53", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Auto Scaling", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Amazon EC2 auto-recovery", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Amazon WAF", "IsAnswer": false }],
+            "Explanation": "You should aim to build as much automation as possible in both detecting and reacting to failure. You can use services like ELB and Amazon Route53 to configure health checks and mask failure by routing traffic to healthy endpoints. In addition, Auto Scaling can be configured to automatically replace unhealthy nodes .You can also replace unhealthy nodes using the Amazon EC2 auto-recovery feature or services such as AWS OpsWorks and AWS Elastic Beanstalk. It won’t be possible to predict every possible failure scenario on day one. Make sure you collect enough logs and metrics to understand normal system behavior. After you understand that, you will be able to set up alarms for manual intervention or automated response.",
+            "Ref":"https://d1.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf"
     } 
     ,
     {
         "Id": 24,
-        "Name": "", 
+        "Name": "You are working on a project that involves creating thumbnails of millions of images; however, time is not really an issue, and continuous processing is not required. Which type of EC2 buying option would be the most cost-effective?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "Reserved instances", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Spot instances", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "On-demand instances", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Dedicated instances", "IsAnswer": false }],
+            "Explanation": "Spot Instances are a cost-effective choice if you can be flexible about when your applications run and if your applications can be interrupted. For example, Spot Instances are well-suited for data analysis, batch jobs, background processing, and optional tasks. ",
+            "Ref":"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html"  
     } 
     ,
     {
         "Id": 25,
-        "Name": "", 
+        "Name": "You are working on an application that requires low-latency network performance. In order to establish this, which AWS feature can be used?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "ELB and Auto scaling", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Placement groups", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "EC2 and DynamoDB", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "ElasticMapReduce", "IsAnswer": false }],
+            "Explanation": "Placement groups allow logical grouping of the Amazon EC2 instances . Cluster Placement groups are recommended for applications that benefit from low network latency, high network throughput, or both, and if the majority of the network traffic is between the instances in the group.",
+            "Ref":"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html"
     } 
     ,
     {
         "Id": 26,
-        "Name": "", 
+        "Name": "You are trying to organize and import (to AWS) gigabytes of data that are currently structured in JSON-like, name-value documents. What AWS service would best fit your needs?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "Lambda", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Aurora", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "RDS", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "DynamoDB", "IsAnswer": true }],
+            "Explanation": "DynamoDB is AWS's NoSQL database offering. NoSQL databases are for non-structured data that are typically stored in JSON-like, name-value documents."
     } 
     ,
     {
         "Id": 27,
-        "Name": "", 
+        "Name": "A company is currently using the Enterprise Support plan. They want quick and efficient guidance with their billing and account inquiries. Which of the following included services could assist them?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "AWS Support API", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "AWS Support Concierge", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "AWS Advisor", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Customer Contacts", "IsAnswer": false }],
+            "Explanation": "Included as part of the Enterprise Support plan, the Support Concierge Team are AWS billing and account experts that specialize in working with enterprise accounts. This Concierge team will quickly and efficiently assist you with your billing and account inquiries, and work with you to help implement billing and account best practices so that you can focus on what matters: running your business. Support Concierge service includes: **24 x7 access to AWS billing and account inquires. **Guidance and best practices for billing allocation, reporting, consolidation of accounts, and root-level account security. **Access to Enterprise account specialists for payment inquiries, training on specific cost reporting, assistance with service limits, and facilitating bulk purchases. ",
+            "Ref":"https://aws.amazon.com/premiumsupport/features/"
     } 
     ,
     {
         "Id": 28,
-        "Name": "", 
+        "Name": "As part of the Enterprise support plan, who is the primary point of contact for the ongoing support needs?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "TAM", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "IEM", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "ISM", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "TSM", "IsAnswer": false }],
+            "Explanation": "Technical Account Manager (TAM): For Enterprise-level customers, a TAM provides technical expertise for the full range of AWS services and obtains a detailed understanding of your use case and technology architecture. TAMs work with AWS Solution Architects to help you launch new projects and give best practices recommendations throughout the implementation life cycle. Your TAM is the primary point of contact for ongoing support needs, and you have a direct telephone line to your TAM."
     } 
     ,
     {
         "Id": 29,
-        "Name": "", 
+        "Name": "You have developed a web application targeting a global audience. Which of the following will help you achieve the highest redundancy and fault tolerance?", 
         "Tag":"",
         "manyoptions":false,
         "Options": [
-            { "Id": 1055, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1056, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1057, "QuestionId": 1010, "Name": "", "IsAnswer": false },
-            { "Id": 1058, "QuestionId": 1010, "Name": "", "IsAnswer": false }],
-            "Explanation": "",
-            "Ref":""  
+            { "Id": 1055, "QuestionId": 1010, "Name": "Single Availability zone (AZ)", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Multiple AZs in many AWS regions.", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Multiple AZs in a Single AWS region.", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Nothing from the above would help.", "IsAnswer": false }],
+            "Explanation": "Since you are targeting a global audience then you have to use many AWS regions around the world and multiple AZs within it to prevent any impact in case of an AZ or even a region going down. AWS Cloud infrastructure is built around Regions and Availability Zones (AZs). A Region is a physical location in the world where we have multiple AZs. AZs consist of one or more discrete data centers, each with redundant power, networking, and connectivity, housed in separate facilities. These AZs offer you the ability to operate production applications and databases that are more highly available, fault tolerant, and scalable than would be possible from a single data center. Each Amazon Region is designed to be completely isolated from the other Amazon Regions. This achieves the greatest possible fault tolerance and stability. Each AZ is isolated, but the AZs in a Region are connected through low-latency links. AWS provides you with the flexibility to place instances and store data within multiple geographic Regions as well as across multiple Availability Zones within each Region. Each Availability Zone is designed as an independent failure zone. This means that Availability Zones are physically separated within a typical metropolitan region and are located in lower risk flood plains (specific flood zone categorization varies by Region). In addition to discrete uninterruptable power supply (UPS) and onsite backup generation facilities, they are each fed via different grids from independent utilities to further reduce single points of failure. AZs are all redundantly connected to multiple tier-1 transit providers. ",
+            "Ref":"https://d1.awsstatic.com/whitepapers/aws-overview.pdf"  
     } 
     ,
     {
         "Id": 30,
+        "Name": "Which of the following is your responsibility when creating Amazon VPC security groups? (Select 2)", 
+        "Tag":"",
+        "manyoptions":true,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "Ensuring that the rules take effect before creating another security groups.", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Giving a name and description for the security group", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Adding rules to the security group.", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Ensuring that the security groups are linked to the Elastic Network interface.", "IsAnswer": false }],
+            "Explanation": "See reference",
+            "Ref":"https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html"  
+    } 
+    ,
+    {
+        "Id": 31,
+        "Name": "Which of the following does AWS perform on your behalf for EBS volumes to reduce the possibility of failure?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "Replication of the volume across Availability Zones", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Replication of the volume across Regions", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Replication of the volume in the same Availability Zone", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Replication of the volume across Edge locations", "IsAnswer": false }],
+            "Explanation": "When you create an EBS volume in an Availability Zone, it is automatically replicated within that zone to prevent data loss due to failure of any single hardware component.",
+            "Ref":"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/"  
+    } 
+    ,
+    {
+        "Id": 32,
+        "Name": "What does the AWS Snowball provide?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "A direct encrypted connection to Amazon S3.", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Secure transfer to large amounts of data into and out of the AWS Cloud.", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "It’s a backup solution that provides an on-premises Cloud storage.", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "It provides an encrypted SSL endpoint for backups in the Cloud.", "IsAnswer": false }],
+            "Explanation": "Snowball is a petabyte-scale data transport solution that uses devices designed to be secure to transfer large amounts of data into and out of the AWS Cloud. Using Snowball addresses common challenges with large-scale data transfers including high network costs, long transfer times, and security concerns. Customers today use Snowball to migrate analytics data, genomics data, video libraries, image repositories, backups, and to archive part of data center shutdowns, tape replacement or application migration projects. Transferring data with Snowball is simple, fast, more secure, and can be as little as one-fifth the cost of transferring data via high-speed Internet. ",
+            "Ref":"https://aws.amazon.com/snowball/"  
+    } 
+    ,
+    {
+        "Id": 33,
+        "Name": "Your logs show that one or more AWS-owned IP addresses are sending packets to multiple ports on your server, and you believe this is an attempt to discover unsecured ports. What should you do?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "Contact the AWS Security team.", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Contact the AWS support team.", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Contact the AWS Abuse team.", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "AWS Customer Service team.", "IsAnswer": false }],
+            "Explanation": "The AWS Abuse team can assist you when AWS resources are being used to engage in the following types of abusive behavior: I. Spam: You are receiving unwanted emails from an AWS-owned IP address, or AWS resources are being used to spam websites or forums. II. Port scanning: Your logs show that one or more AWS-owned IP addresses are sending packets to multiple ports on your server, and you believe this is an attempt to discover unsecured ports. III. Denial of service attacks (DOS): Your logs show that one or more AWS-owned IP addresses are being used to flood ports on your resources with packets, and you believe this is an attempt to overwhelm or crash your server or software running on your server. IV. Intrusion attempts: Your logs show that one or more AWS-owned IP addresses are being used to attempt to log in to your resources. V. Hosting objectionable or copyrighted content: You have evidence that AWS resources are being used to host or distribute illegal content or distribute copyrighted content without the consent of the copyright holder. VI. Distributing malware: You have evidence that AWS resources are being used to distribute software that was knowingly created to compromise or cause harm to computers or machines on which it is installed. ",
+            "Ref":"https://aws.amazon.com/premiumsupport/knowledge-center/report-aws-abuse/"  
+    } 
+    ,
+    {
+        "Id": 34,
+        "Name": "What are the characteristics of Amazon S3? Choose 2 answers", 
+        "Tag":"",
+        "manyoptions":true,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "S3 allows you to store unlimited amounts of data.", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "S3 allows you to store objects of virtually unlimited size.", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "S3 should be used to host a relational database.", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Objects are directly accessible via a URL.", "IsAnswer": true }],
+            "Explanation": "Each object does have a limitation in S3, but you can store virtually unlimited amounts of data. Also each object gets a directly accessible URL. Option B is wrong as S3 limits object size. Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 terabytes. Option C is wrong as S3 is an object storage and not a block storage and does not allow to host OS or database on it. ",
+            "Ref":"https://aws.amazon.com/s3/"  
+    } 
+    ,
+    {
+        "Id": 35,
+        "Name": "The principle “design for failure and nothing will fail” is very important when designing your AWS cloud architecture. Which of the following would help in doing so? (Select 3 that apply)", 
+        "Tag":"",
+        "manyoptions":true,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "Availability Zones", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Regions", "IsAnswer": true },
+            { "Id": 1057, "QuestionId": 1010, "Name": "AWS WAF", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Elastic Load Balancer", "IsAnswer": true }],
+            "Explanation": "Each AZ is a set of one or more data centers. By deploying your AWS resources to multiple Availability zones , you are designing with failure with mind. So if one AZ were to go down , the other AZ’s would still be up and running and hence your application would be more fault tolerant. For disaster recovery scenarios , one can move or make resources run in other regions And finally one can use the Elastic Load Balancer to distribute load to multiple backend instances within a particular region.",
+            "Ref":"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones"  
+    } 
+    ,
+    {
+        "Id": 36,
+        "Name": "You are going to create snapshots from the EBS volumes in another geographical location using the console. Where would you create the snapshots?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "In another Availability Zone", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "In another data center", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "In another Edge location", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "In another Region", "IsAnswer": true }],
+            "Explanation": "Since you are going to create the snapshots in another geographical location then the answer is regions.",
+            "Ref":"https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html"  
+    } 
+    ,
+    {
+        "Id": 37,
+        "Name": "Which of the following services has been described as a global content delivery network (CDN) service?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "Amazon SES", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "Amazon Cloudtrail", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "Amazon CloudFront", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "Amazon S3", "IsAnswer": false }],
+            "Explanation": "Amazon CloudFront is a global content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to your viewers with low latency and high transfer speeds. CloudFront is integrated with AWS – including physical locations that are directly connected to the AWS global infrastructure, as well as software that works seamlessly with services including AWS Shield for DDoS mitigation, Amazon S3, Elastic Load Balancing or Amazon EC2 as origins for your applications, and Lambda@Edge to run custom code close to your viewers.",
+            "Ref":"https://aws.amazon.com/cloudfront/"  
+    } 
+    ,
+    {
+        "Id": 38,
+        "Name": "Your web application is generating digital policy files for verifying users. Once the files are verified, they may not be required in the future unless there are some compliance issues. If you want to save them in a cost-effective way, what is the best possible solution?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "S3 Intelligent-Tiering", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "AWS RDS", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "AWS S3", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "AWS Glacier", "IsAnswer": true }],
+            "Explanation": "Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and flexible storage for data backup and archival. With Amazon Glacier, customers can reliably store their data for as little as $0.004 per gigabyte per month. Amazon Glacier enables customers to offload the administrative burdens of operating and scaling storage to AWS, so that they don’t have to worry about capacity planning, hardware provisioning, data replication, hardware failure detection and repair, or time-consuming hardware migrations.",
+            "Ref":"https://aws.amazon.com/glacier/"  
+    } 
+    ,
+    {
+        "Id": 39,
+        "Name": "A company moved to AWS recently. They have a lot of concerns about their security. Which of the following would help them ensure that the right security settings are put in place? (Select 2 that apply)", 
+        "Tag":"",
+        "manyoptions":true,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "AWS Inspector", "IsAnswer": true },
+            { "Id": 1056, "QuestionId": 1010, "Name": "AWS Kinesis", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "AWS Support", "IsAnswer": false },
+            { "Id": 1058, "QuestionId": 1010, "Name": "AWS Trusted Advisor", "IsAnswer": true }],
+            "Explanation": "AWS Trusted Advisor is an online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment, Trusted Advisor provides real time guidance to help you provision your resources following AWS best practices. https://aws.amazon.com/premiumsupport/trustedadvisor/. **Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for vulnerabilities or deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. These findings can be reviewed directly or as part of detailed assessment reports which are available via the Amazon Inspector console or API. To help you get started quickly, Amazon Inspector includes a knowledge base of hundreds of rules mapped to common security best practices and vulnerability definitions. Examples of built-in rules include checking for remote root login being enabled, or vulnerable software versions installed. These rules are regularly updated by AWS security researchers.",
+            "Ref":"https://aws.amazon.com/inspector/"  
+    } 
+    ,
+    {
+        "Id": 40,
+        "Name": "One of the most important AWS best practices is to follow the cloud architecture principle of elasticity. How could this principle improve your architecture design?", 
+        "Tag":"",
+        "manyoptions":false,
+        "Options": [
+            { "Id": 1055, "QuestionId": 1010, "Name": "By reducing storage required for your application.", "IsAnswer": false },
+            { "Id": 1056, "QuestionId": 1010, "Name": "By scaling automatically to your on-premises resources based on changes on demand.", "IsAnswer": false },
+            { "Id": 1057, "QuestionId": 1010, "Name": "By scaling automatically and provision the required AWS resources based on changes on demand", "IsAnswer": true },
+            { "Id": 1058, "QuestionId": 1010, "Name": "None of the above", "IsAnswer": false }],
+            "Explanation": "The concept of Elasticity is the means of an application having the ability to scale up and scale down based on demand. An example of such a service is the Autoscaling service."
+    } 
+
+    ,
+    {
+        "Id": 41,
         "Name": "", 
         "Tag":"",
         "manyoptions":false,
