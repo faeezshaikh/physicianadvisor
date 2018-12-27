@@ -7,6 +7,8 @@ import { MyLocalStorage } from '../../providers/my-local-storage';
 import { ExamStartingModal} from '../../modals/examStartingModal';
 import { MyDataService } from '../../providers/my-data-service';
 import { MySocialShareService } from '../../providers/my-social-share-service';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 
 
 
@@ -16,6 +18,7 @@ import { MySocialShareService } from '../../providers/my-social-share-service';
 })
 export class TopicsListPage {
 
+  timesheets: Observable<any[]>;
   icons: string[];
   topics: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
 
@@ -26,19 +29,14 @@ export class TopicsListPage {
   exams: Array<{ no: number, title: string, note: string, icon: string, hiScore: string }>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: MyLocalStorage, public dataService: MyDataService,
               private alertCtrl: AlertController,public modalCtrl: ModalController,
-              public mySocialShareService: MySocialShareService) {
+              public mySocialShareService: MySocialShareService,
+              db: AngularFireDatabase) {
 
 
-    // If we navigated to this page, we will have an item available as a nav param
 
 
-    this.topics = dataService.getTopicsArray();
-    this.exams = dataService.getExamsArray();
-    console.log('Retriecing Exams...',this.exams);
-    
+    this.timesheets = db.list('timesheets').valueChanges();
 
-
-    this.getHiScores();
 
   }
 
@@ -49,7 +47,7 @@ export class TopicsListPage {
 
   ionViewWillEnter() {
     console.log("View Will Enter");
-    this.getHiScores();
+    // this.getHiScores();
 
   }
 
@@ -84,69 +82,6 @@ export class TopicsListPage {
     modal.present();
   }
 
-  reorderNow() {
-    this.reorder = !this.reorder;
-    this.reorderIcon = this.reorder ? "close-circle" : "options";
-  }
-
-  reorderTopics(indexes) {
-    console.log('ReORDER:', indexes);
-    this.topics = reorderArray(this.topics, indexes);
-  }
-
-  // reorderExams(indexes) {
-  //   console.log('ReORDER:', indexes);
-  //   this.exams = reorderArray(this.exams, indexes);
-  // }
-
-  getHiScores() {
-    // console.log('Retrieving HiScore');
-    this.topics.forEach(topic => {
-      this.storage.getScore(topic.no).then(result => {
-        topic.hiScore = result;
-        // console.log('Retrieving Topics Score ...Set Topics ' + topic.no + ' hiscore to:' + result);
-
-      })
-
-    });
-  }
-
-
-  shareViaFacebook() {
-    this.mySocialShareService.shareViaFacebook();
-  }
-   shareViaTwitter()
-   {
-        this.mySocialShareService.shareViaTwitter(); 
-   }
-
-
-  shareViaWhatsapp() {
-       this.mySocialShareService.shareViaWhatsapp();
-  }
-
-
-   shareViaInstagram()
-   {
-          this.mySocialShareService.shareViaInstagram();
-   }
-
-
-  shareViaSMS() {
-      this.mySocialShareService.shareViaSMS();
-  }
-
-   regularShare()
-   {
-         this.mySocialShareService.regularShare();
-   }
-
-
-
-
-   shareViaMail() {
-       this.mySocialShareService.shareViaMail(); 
-  }
 
 
   presentAlert(msg) {

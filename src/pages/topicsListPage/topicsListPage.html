@@ -4,11 +4,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Practice Exams</ion-title>
-  <!--<ion-buttons end>
-      <button ion-button icon-only (click)="reorderNow()">
-        <ion-icon [name]="reorderIcon"></ion-icon>
-      </button>
-    </ion-buttons>-->
+
   </ion-navbar>
   
 </ion-header>
@@ -24,20 +20,19 @@
 
   <ion-list>
 
-    <ion-item-divider color="light">Practice </ion-item-divider>
+    <ion-item-divider color="light">Timesheets </ion-item-divider>
     <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderTopics($event)">
       <!--<ion-item-sliding *ngFor="let topic of topics">
         <ion-item (click)="itemTapped($event, topic)" detail-push>-->
 
-        <ion-item  *ngFor="let topic of topics | slice:0:4; let i = index;" (click)="itemTapped($event, topic)" detail-push>
+        <ion-item  *ngFor="let timesheet of timesheets | async" (click)="itemTapped($event, topic)" detail-push>
           
-          <ion-thumbnail item-left>
+          <!-- <ion-thumbnail item-left>
             <img src="{{topic.icon}}">
-          </ion-thumbnail>
-          <h2>{{topic.title}}</h2>
-          <p>{{topic.note}}, {{topic.time}}</p>
+          </ion-thumbnail> -->
+          <h2>{{timesheet.id}}</h2>
+          <!-- <p>{{topic.note}}, {{topic.time}}</p> -->
 
-          <p>Last Score: {{topic.hiScore || '(Not attempted)'}} {{topic.hiScore ? '%' : '' }}</p>
         </ion-item>
 
         <!--<ion-item-options side="left">
@@ -52,38 +47,10 @@
       <!--</ion-item-sliding>-->
     </ion-item-group>
    
-    <ion-item-divider color="light">Mock Exams</ion-item-divider>
-    <ion-item-group [reorder]="reorder" (ionItemReorder)="reorderExams($event)">
-      <ion-item *ngFor="let exam of exams" (click)="itemTapped($event, exam)" detail-push>
-        <ion-thumbnail item-left>
-          <img src="{{exam.icon}}">
-        </ion-thumbnail>
-        <h2>{{exam.title}}</h2>
-        <p>{{exam.note}}, {{exam.time}}</p>
-         <p>Last Score: {{exam.hiScore || '(Not attempted)'}} {{exam.hiScore ? '%' : '' }}</p>
-      </ion-item>
-    </ion-item-group>
 
   </ion-list>
 
 
- <ion-fab bottom right >
-   <button ion-fab>  <ion-icon name="share"></ion-icon></button>
-   <ion-fab-list side="top">
-     <button ion-fab (click)="shareViaFacebook()"> <ion-icon name="logo-facebook"></ion-icon></button>
-     <button ion-fab (click)="shareViaTwitter()"> <ion-icon name="logo-twitter"></ion-icon></button>
-     <button ion-fab (click)="shareViaWhatsapp()"><ion-icon name="logo-whatsapp"></ion-icon></button>
-     <button ion-fab (click)="shareViaInstagram()"> <ion-icon name="logo-instagram"></ion-icon></button>
-     <button ion-fab (click)="shareViaSMS()"> <ion-icon name="text"></ion-icon></button>
-     <button ion-fab (click)="regularShare()"> <ion-icon name="share-alt"></ion-icon></button>
-     <button ion-fab (click)= "shareViaMail()"><ion-icon name="mail"></ion-icon></button>
-       
-   </ion-fab-list>
-   <!--<ion-fab-list side="left">
-     <button ion-fab>Vimeo</button>
-     <button ion-fab>Twitter</button>
-     <button ion-fab>Twitter</button>
-   </ion-fab-list>-->
- </ion-fab>
+ 
 
 </ion-content>

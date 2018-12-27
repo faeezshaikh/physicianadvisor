@@ -27,18 +27,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import {AngularFireDatabaseModule} from '@angular/fire/database';
 
 
 import { AuthService } from '../providers/auth.service';
 
 export const environment = {
   firebase: {
-    apiKey: "AIzaSyCfpQi6UU3_mRSc8D45Hs5NhRKqxwXE4dI",
-    authDomain: "awscloudpractitioner-95ff7.firebaseapp.com",
-    databaseURL: "https://awscloudpractitioner-95ff7.firebaseio.com",
-    projectId: "awscloudpractitioner-95ff7",
-    storageBucket: "awscloudpractitioner-95ff7.appspot.com",
-    messagingSenderId: "56759945711"
+    
   }
 };
 
@@ -69,6 +65,7 @@ import {EventsService} from "../providers/events.service";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, 
     HttpClientModule,
+    AngularFireDatabaseModule,
     BrowserModule
   ],
   bootstrap: [IonicApp],
