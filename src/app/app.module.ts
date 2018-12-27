@@ -34,7 +34,7 @@ import { AuthService } from '../providers/auth.service';
 
 export const environment = {
   firebase: {
-    
+   
   }
 };
 

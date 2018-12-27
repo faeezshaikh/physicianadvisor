@@ -35,7 +35,7 @@ export class TopicsListPage {
 
 
 
-    this.timesheets = db.list('timesheets').valueChanges();
+    this.timesheets = db.list('user1/').valueChanges();
 
 
   }
@@ -51,20 +51,13 @@ export class TopicsListPage {
 
   }
 
-  itemTapped(event, topic) {
-    if(topic.no > 8) {
-      this.openModal(topic);
-    } else {
-     this.startExam(topic); 
-    }
-  }
-
-  startExam(topic) {
-     this.navCtrl.push(TopicDetailPage, {
-      topic: topic
+  itemTapped(event, timesheet) {
+    this.navCtrl.push(TopicDetailPage, {
+      timesheet: timesheet
     });
   }
 
+ 
     openModal(topic) {
     let modal = this.modalCtrl.create(ExamStartingModal,topic,{'enableBackdropDismiss':true});
      modal.onDidDismiss(data => {
@@ -76,7 +69,7 @@ export class TopicsListPage {
         console.log("Loading dismissed");
       });;
       } else if (data && !data.cancel) {
-        this.startExam(topic);
+
       }
    });
     modal.present();

@@ -25,13 +25,13 @@
       <!--<ion-item-sliding *ngFor="let topic of topics">
         <ion-item (click)="itemTapped($event, topic)" detail-push>-->
 
-        <ion-item  *ngFor="let timesheet of timesheets | async" (click)="itemTapped($event, topic)" detail-push>
+        <ion-item  *ngFor="let timesheet of timesheets | async" (click)="itemTapped($event, timesheet)" detail-push>
           
           <!-- <ion-thumbnail item-left>
             <img src="{{topic.icon}}">
           </ion-thumbnail> -->
-          <h2>{{timesheet.id}}</h2>
-          <!-- <p>{{topic.note}}, {{topic.time}}</p> -->
+          <h2>{{timesheet.hospital}}</h2>
+          <p>{{timesheet.monthof}}</p>
 
         </ion-item>
 

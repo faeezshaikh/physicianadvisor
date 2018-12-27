@@ -4,7 +4,7 @@
         <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-        <ion-title>Practice Exam</ion-title>
+        <ion-title>Timesheet Entries</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -12,223 +12,18 @@
 
 <ion-content padding id="listScroll">
 
+    <ion-item  *ngFor="let entry of timesheet.entries" (click)="itemTapped($event, entry)" detail-push>
+          
+        <!-- <ion-thumbnail item-left>
+          <img src="{{topic.icon}}">
+        </ion-thumbnail> -->
+        <h2>{{entry.hospital}}</h2>
+        <p>{{entry.expendedtime}} hrs</p>
+        <p>{{entry.dutyno}} hrs</p>
+        <p>{{entry.date}} hrs</p>
+        <p>{{entry.activities}} hrs</p>
 
-    <p></p>
-
-    <div id="quiz" *ngIf="data != undefined && data.quiz != undefined && mode === 'quiz'">
-        <div class="center">
-            <h3> {{data.quiz.name|| "Exam"}}</h3>
-            <img height="80" width="80" src="{{data.quiz.logo}}" />
-        </div>
-
-        <!--  <div class="center " ng-if="showTimer">
-                <button class="button button-outline button-balanced center">
-                    <i class="ion-android-alarm-clock larger "></i> &nbsp;
-                    <timer countdown="timer" max-time-unit="'minute'" interval="1000" finish-callback="timerElapsed()">{{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
-                </button>
-            </div>-->
-
-        <div class="center">
-            <button ion-button outline><ion-icon name="timer"></ion-icon>  &nbsp;{{minutes}} Mts,  {{seconds}} s</button>
-        </div>
-
-        <ion-card>
-            <!--https://github.com/previousdeveloper/angular2-simple-countdown-->
-            <!--<count-down [text]="text" units="Days | Hours | Minutes | Seconds" end="April 13, 2017"></count-down>-->
-            <!--The above timer did not work-->
-
-
-
-            <!--https://github.com/J-Siu/ng2-simple-timer-->
-            <!--http://embed.plnkr.co/HaTd8q/-->
-
-
-            <ion-item>
-                <p style="text-align:center">Question {{questionNumber}} of {{questions.length}}.</p>
-            </ion-item>
-            <ion-card-header>
-                <div class="item item-text-wrap item-divider ">{{question.Name}}</div>
-                <img *ngIf="question.Pic" src="{{question.Pic}}"/>
-            </ion-card-header>
-
-            <ion-card-content>
-                <!--<div class="item item-text-wrap col-100">-->
-                <!--<ul class="list">-->
-
-                    <div *ngIf="question.manyoptions">
-                <div  *ngFor="let option of question.Options">
-                    <!--<li class="item item-checkbox"><label class="checkbox"> 
-                                          <input type="checkbox" id="{{option.Id}}" ng-model="option.Selected" ng-change="onSelect(question, option);">
-                                            </label> {{option.Name}}
-                                
-                                          </li>-->
-
-                    <ion-item >
-
-                        <ion-checkbox color="primary" checked="false" [(ngModel)]="option.Selected"></ion-checkbox>
-                        <ion-label> {{option.Name}}</ion-label>
-                    </ion-item>
-
-
-                 
-
-                    
-                </div>
-            </div>
-
-                <div *ngIf="!question.manyoptions">
-                <ion-list  radio-group [(ngModel)]="question.answer">
-                        <ion-item *ngFor="let option of question.Options" >
-                            <ion-label> {{option.Name}}</ion-label>
-                            <ion-radio   item-left  name="firstName" color="primary" (ionSelect)="updateAnswer(question,option)" 
-                            checked="false" value="{{option.Name}}" ></ion-radio>
-                        </ion-item>
-                    </ion-list>
-                </div>
-                    
-
-                <!--</ul>-->
-
-
-                <!--</div>-->
-            </ion-card-content>
-
-            <ion-card-header>
-                <div style="text-align:center">
-
-                    <button *ngIf="questionNumber!=1" (click)="left()" ion-button icon-left>
-                              <ion-icon name="arrow-back"></ion-icon>
-                              Prev
-                            </button>
-
-                    <button [hidden] = "questionNumber == questions.length" (click)="right()" ion-button icon-left>
-                              Next &nbsp;
-                               <ion-icon name="arrow-forward"></ion-icon>
-                            </button>
-
-                </div>
-            </ion-card-header>
-            <br />
-            <div style="text-align:center">
-                <button (click)="presentAbortConfirm()" color="danger" ion-button icon-left>
-                              <ion-icon name="close"></ion-icon>
-                              Abort
-                            </button>
-
-                <button (click)="setMode('review')" ion-button icon-left>
-                              <ion-icon name="list"></ion-icon>
-                              Review
-                            </button>
-
-
-                <button (click)="presentSubmitConfirm()" ion-button icon-left>
-                              Submit &nbsp;
-                               <ion-icon name="checkmark-circle-outline"></ion-icon>
-                            </button>
-
-            </div>
-        </ion-card>
-    </div>
-
-
-    <p></p>
-
-
-    <div *ngIf="mode=='review'" class="review">
-        <p></p>
-        <div *ngFor="let question of questions; let i = index;">
-            <div (click)="goTo(i + 1)" class="{{ isAnswered(question) == 'Answered'? 'answered': 'not-answered' }}">{{i + 1}}. {{ isAnswered(question) }}</div>
-        </div>
-        <p></p>
-        <button ion-button (click)="setMode('quiz')"> Back </button>
-    </div>
-
-
-
-
-
-    <div class="center result" *ngIf="mode=='result'">
-        <p></p>
-        <ion-card>
-            <ion-item>
-                <ion-avatar item-left>
-                    <img src="assets/img/exam.jpg">
-                </ion-avatar>
-                <h2>Score Card</h2>
-                <p>{{verdict}}</p>
-            </ion-item>
-            <hr/>
-
-            <div class="item item-body">
-
-                <div class="row">
-                    <div class="col col-80">Total Questions</div>
-                    <div class="col col-20">{{questions.length}}</div>
-                </div>
-
-                <div class="row">
-                    <div class="col col-80">Correct Answers</div>
-                    <div class="col col-20">{{correct}}</div>
-                </div>
-
-                <div class="row">
-                    <div class="col col-80">Incorrect Answers</div>
-                    <div class="col col-20">{{questions.length - correct}}</div>
-                </div>
-
-                <div class="row">
-                    <div class="col col-80">Total</div>
-                    <div class="col col-20"><strong>{{score}} %</strong></div>
-                </div>
-                <div class="row">
-                    <div class="col col-80"><strong>Result</strong></div>
-                    <div class="col col-20"><strong>{{verdict}}</strong></div>
-                </div>
-                <hr/>
-                <!-- <img class="full-image" height="150" width="100" ng-src="data/img/table.jpg"> -->
-                <p class="center">
-
-                    <button ion-button (click)="closeResults()">Close</button>
-                </p>
-
-            </div>
-        </ion-card>
-        <p></p>
-
-
-
-        <p class="center">
-            The correct answers are highlighted in green.
-        </p>
-        <div *ngFor="let question of questions; let i = index">
-            <div class="result-question">
-                <h3>{{i + 1}}. {{question.Name}}</h3>
-                <div class="result-options">
-                    <div *ngFor="let Option of question.Options">
-                        <label class="{{  Option.IsAnswer ? 'result-correct': 'result-incorrect' }}"> 
-                                            <input id="{{Option.Id}}" type="checkbox" disabled="disabled" readonly="readonly" 
-                                            [(ngModel)]="Option.Selected "/> {{Option.Name}}
-                                        </label>
-                        <!--<label ng-click="onSelect(Option);" class="{{  Option.IsAnswer ? 'result-correct': 'result-incorrect' }}"> 
-                                            <input id="{{Option.Id}}" type="checkbox" disabled="disabled" readonly="readonly" ng-model="Option.Selected" /> {{Option.Name}}
-                                        </label>-->
-                    </div>
-                </div>
-                <p></p>
-                <button ion-button color="secondary" *ngIf="isCorrect(question) == 'Correct'" round>Correct Answer.</button>
-                <button ion-button color="danger" *ngIf="isCorrect(question) != 'Correct'" round>Wrong Answer.</button>
-
-                <button *ngIf="question.Explanation" (click)="openExplanationModal(question)" ion-button round>Explanation</button>
-
-            </div>
-        </div>
-        <div class="center">
-            <button ion-button (click)="closeResults()">Close</button>
-        </div>
-
-
-    </div>
-
+      </ion-item>
 
 
 
